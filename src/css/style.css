@@ -1,0 +1,140 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border-style: none;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+html, main { 
+    height: 100svh; 
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-list {
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: repeat(3, 17.1em);
+    column-gap: 2em;
+    row-gap: 2em;
+    width: 82%;
+    height: 40%;
+    overflow: scroll;    
+}
+
+h2 {
+    font-family: "Kanit", sans-serif;
+    font-size: 2.5em;
+}
+
+.completed {
+    border-left: solid 7px #0adb0a !important;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    background-color: #242426;
+    width: 100%;
+    height: 6.5em;
+    position: relative;
+    border-left: solid 7px #ff0000;
+
+
+    .task-info {
+        padding-left: 15px;
+        width: 95%;
+        position: relative;
+
+        h3 {
+            margin-top: 15px;
+            color: #fff;
+            font-family: Jost;
+            width: 90%;
+            word-wrap: break-word;
+        }
+
+    }
+    
+    .task-options {
+        width: 95%;
+        margin-top: 0.3em;
+        position: absolute;
+        padding-left: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        bottom: 1.3em;
+
+        .task-date {
+            color: #99999c;
+            font-family: Inter;
+            font-size: 12px;
+        }
+
+        .modify-task-section {
+            position: absolute;
+            display: flex;
+            gap: 1em;
+            right: 0;
+        }
+
+        .fa-icon {
+            font-size: 1.1em;
+            cursor: pointer;
+            color: #fff;
+            transition: 0.2s;
+        }
+
+        .trash-icon:hover { color: #ce0707; }
+        .check-icon:hover { color: #32D74B; }
+        .edit-icon:hover {color: #ffff00;}
+        .edit-icon {
+            height: 1em;
+            width: 1em;
+        }
+    }
+}
+
+.user-input {
+    margin: 2em 0;
+
+    input {
+        height: 2.7em;
+        padding: 0 1em;
+        border-radius: 2em;
+        font-family: "Nunito Sans", sans-serif;
+        width: 25em;
+    }
+
+    button {
+        margin-left: 1em;
+        height: 2.7em;
+        width: 8em;
+        border-radius: 2em;
+        cursor: pointer;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+
